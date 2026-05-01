@@ -76,7 +76,7 @@ export default function OrderDetailPage() {
             schema: 'public',
             table: 'order_messages',
             filter: `order_id=eq.${id}`
-          }, (payload) => {
+          }, (payload: any) => {
             setMessages(prev => [...prev, payload.new]);
           })
           .subscribe();

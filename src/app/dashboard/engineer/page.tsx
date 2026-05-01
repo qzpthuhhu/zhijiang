@@ -145,7 +145,7 @@ export default function EngineerDashboard() {
         .update({ status: newStatus, updated_at: new Date().toISOString() })
         .eq('id', orderId);
 
-      setOrders(orders.map(o => o.id === orderId ? { ...o, status: newStatus } : o));
+      setOrders(orders.map((o: any) => o.id === orderId ? { ...o, status: newStatus } : o));
     } catch (error) {
       console.error('Update status error:', error);
     }

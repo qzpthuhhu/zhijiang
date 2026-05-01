@@ -66,7 +66,7 @@ export default function CustomerDashboard() {
         const engineerData = engineerResult.data || [];
 
         // 加载工程师的个人资料
-        const engineerIds = engineerData.map(e => e.id);
+        const engineerIds = engineerData.map((e: any) => e.id);
         let profileData = [];
         if (engineerIds.length > 0) {
           const { data } = await supabase

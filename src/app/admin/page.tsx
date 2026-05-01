@@ -61,7 +61,7 @@ export default function AdminDashboard() {
       .select('*')
       .order('created_at', { ascending: false });
 
-    const engineerIds = engineerData?.map(e => e.id) || [];
+    const engineerIds = engineerData?.map((e: any) => e.id) || [];
     const { data: profileData } = await supabase
       .from('profiles')
       .select('*')
@@ -70,7 +70,7 @@ export default function AdminDashboard() {
     setOrders(ordersData || []);
     setEngineers(engineerData || []);
     setEngineerProfiles(profileData || []);
-    setApprovedEngineers(engineerData?.filter(e => e.engineer_status === 'approved') || []);
+    setApprovedEngineers(engineerData?.filter((e: any) => e.engineer_status === 'approved') || []);
   };
 
   const handleReviewEngineer = async (engineerId: string, action: 'approved' | 'rejected') => {

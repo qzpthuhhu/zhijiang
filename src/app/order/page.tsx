@@ -31,7 +31,7 @@ function OrderForm() {
   });
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => {
+    supabase.auth.getUser().then(({ data }: any) => {
       if (!data.user) {
         router.push('/login?redirect=/order');
       } else {

@@ -5,7 +5,11 @@ WORKDIR /app
 
 # 复制依赖文件
 COPY package*.json ./
+COPY prisma ./prisma/
 RUN npm ci
+
+# 生成 Prisma Client
+RUN npx prisma generate
 
 # 复制源代码
 COPY . .

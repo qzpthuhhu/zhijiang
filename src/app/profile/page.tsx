@@ -70,7 +70,7 @@ export default function ProfilePage() {
           const engineerData = engineerResult.data || [];
 
           // 加载工程师的个人资料
-          const engineerIds = engineerData.map(e => e.id);
+          const engineerIds = engineerData.map((e: any) => e.id);
           let profileData = [];
           if (engineerIds.length > 0) {
             const { data } = await supabase
@@ -92,7 +92,7 @@ export default function ProfilePage() {
             .order('created_at', { ascending: false });
 
           // 工程师：加载联系过的客户
-          const customerIds = orderData?.map(o => o.customer_id) || [];
+          const customerIds = orderData?.map((o: any) => o.customer_id) || [];
           let customerData = [];
           if (customerIds.length > 0) {
             const { data } = await supabase

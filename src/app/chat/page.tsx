@@ -55,7 +55,7 @@ export default function ChatPage() {
         }
 
         // 为每个订单获取相关的用户信息和消息
-        const conversationPromises = orders.map(async (order) => {
+        const conversationPromises = orders.map(async (order: any) => {
           const otherUserId = order.customer_id === authUser.id ? order.assigned_engineer_id : order.customer_id;
           if (!otherUserId) return null;
 
@@ -118,7 +118,7 @@ export default function ChatPage() {
           schema: 'public',
           table: 'order_messages',
           filter: `order_id=eq.${orderId}`
-        }, (payload) => {
+        }, (payload: any) => {
           setMessages(prev => [...prev, payload.new]);
         })
         .subscribe();

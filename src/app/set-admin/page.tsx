@@ -16,7 +16,7 @@ export default function SetAdminPage() {
 
   useEffect(() => {
     const supabase = createBrowserClient(supabaseUrl!, supabaseKey!);
-    supabase.auth.getUser().then(({ data }) => {
+    supabase.auth.getUser().then(({ data }: any) => {
       if (data.user) {
         setUser(data.user);
         setEmail(data.user.email || '');

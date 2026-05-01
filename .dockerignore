@@ -1,0 +1,15 @@
+node_modules
+.next
+.git
+.gitignore
+.env
+.env.local
+.env.development
+docker-compose.yml
+README.md
+.vscode
+.idea
+*.log
+.DS_Store
+prisma/migrations
+src/generated/prisma
